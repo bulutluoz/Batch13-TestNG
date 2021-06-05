@@ -11,6 +11,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class C3_SoftAssertTest {
@@ -79,6 +82,19 @@ public class C3_SoftAssertTest {
         softAssert.assertEquals(actualSeciliOpsiyon,expectedValue);
 
         // 10. soft assert kullanarak DropDown listesinin su secenekleri oldugunu test edin "Select One", "Australia (dollar)", "Canada (dollar)","Switzerland (franc)","China (yuan)","Denmark (krone)","Eurozone (euro)","Great Britain (pound)","Hong Kong (dollar)","Japan (yen)","Mexico (peso)","Norway (krone)","New Zealand (dollar)","Sweden (krona)","Singapore (dollar)","Thailand (baht)"
+
+        List<WebElement> tumOpsiyonlar= select.getOptions();
+        List<String> tumOpsiyonlarString = new ArrayList<String>();
+
+        for (WebElement w:tumOpsiyonlar
+        ) {
+
+            tumOpsiyonlarString.add(w.getText());
+        }
+
+        List<String > expectedOptionsList = Arrays.asList("Select One", "Australia (dollar)", "Canada (dollar)","Switzerland (franc)","China (yuan)","Denmark (krone)","Eurozone (euro)","Great Britain (pound)", "Hong Kong (dollar)","Japan (yen)","Mexico (peso)","Norway (krone)","New Zealand (dollar)","Sweden (krona)", "Singapore (dollar)","Thailand (baht)");
+
+        softAssert.assertEquals(tumOpsiyonlarString,expectedOptionsList,"options listesi actual ile uyusmuyor");
 
 
         softAssert.assertAll();
