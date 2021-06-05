@@ -36,8 +36,10 @@ public class C3_IFramePlay {
     public void test01(){
         driver.get("https://html.com/tags/iframe/");
         WebElement iframe=driver.findElement(By.xpath("//iframe[@class='lazy-loaded']"));
+        driver.switchTo().frame(iframe);
 
-       iframe.click();
+
+        driver.findElement(By.xpath("//button[@class='ytp-large-play-button ytp-button']")).click();
 
 
     }
