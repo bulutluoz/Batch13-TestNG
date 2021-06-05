@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -44,7 +45,7 @@ public class C3_SoftAssertTest {
 
     @AfterClass
     public void tearDown(){
-        //driver.close();
+        driver.close();
     }
 
     @Test
