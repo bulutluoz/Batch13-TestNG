@@ -36,6 +36,7 @@ public class C5_KeyboardActions02 extends TestBase {
 
         driver.findElement(By.xpath("//button[@class='ytp-large-play-button ytp-button']")).click();
 
+        // 5- videoyu calistirdiginizi test edin
         Assert.assertTrue(driver.findElement(By.xpath("//div[@class='html5-video-player ytp-exp-bottom-control-flexbox ytp-title-enable-channel-logo ytp-embed ytp-embed-playlist ad-created playing-mode ytp-autohide']")).isDisplayed());
 
     }
